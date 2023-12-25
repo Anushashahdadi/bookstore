@@ -26,3 +26,36 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+const sql = require('mssql');
+
+// Database configuration
+const config = {
+  user: 'your_username',
+  password: 'your_password',
+  server: 'your_server',
+  database: 'your_database',
+  options: {
+    encrypt: true // If you are using Azure
+  }
+}; 
+sql.connect(config, (err) => {
+  if (err) {
+    console.log(err);
+    res.status(500).send('Database error');
+  } else {
+    // Query the database
+    new sql.Request()
+      .query(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`, (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send('Database error');
+        } else {
+          if (result.recordset.length > 0) {
+            res.send(`Welcome, ${username}!`);
+          } else {
+            res.send('Invalid username or password');
+          }
+        }
+        sql.close();
+      });
+  }})
