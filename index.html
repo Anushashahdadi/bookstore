@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>آنوشا شهدادی - صفحه ورود</title>
+    <style>
+        body {
+            background-color: #ADD8E6; /* رنگ آبی پس زمینه */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin: 100px auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        h1 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: #333;
+        }
+        h2 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>به سایت کتابخانه آنوشا شهدادی خوش آمدید</h1>
+
+<h2>فرم ورود</h2>
+
+<div class="container">
+    <form action="/submit-login" method="post">
+        <label for="uname"><b>نام کاربری</b></label>
+        <input type="text" placeholder="نام کاربری را وارد کنید" name="uname" required>
+
+        <label for="psw"><b>رمز عبور</b></label>
+        <input type="password" placeholder="رمز عبور را وارد کنید" name="psw" required>
+
+        <button type="submit">ورود</button>
+    </form>
+</div>
+
+<p>این سایت تقدیم به پدر عزیزم</p>
+
+</body>
+</html>
